@@ -19,6 +19,9 @@ public class Volvo {
         this.rate = rate;
     }
 
+    public Volvo() {
+    }
+
     public String getSerie() {
         return serie;
     }

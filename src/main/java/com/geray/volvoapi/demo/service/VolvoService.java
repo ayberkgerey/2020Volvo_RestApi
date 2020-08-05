@@ -1,11 +1,13 @@
 package com.geray.volvoapi.demo.service;
 
 import com.geray.volvoapi.demo.model.Volvo;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+@Service
 public class VolvoService {
 
     private List<Volvo> carList = Arrays.asList(
@@ -26,6 +28,22 @@ public class VolvoService {
     );
         public List<Volvo> getAllCars(){
             return carList;
+        }
+
+
+    public Volvo getbySerie(String serie) {
+        return carList.stream().filter(t -> t.getSerie().equals(serie)).findFirst().get();
+        }
+
+
+    public List<Volvo> getbyBodyType(String bodyType) {
+           List<Volvo> searchedTypes = Arrays.asList();
+        for (int i = 0; i < carList.size() ; i++) {
+                if(carList.get(i).getBodyType().equals(bodyType)){
+                    searchedTypes.add(carList.get(i));
+                }
+        }
+            return searchedTypes;
         }
 
 
