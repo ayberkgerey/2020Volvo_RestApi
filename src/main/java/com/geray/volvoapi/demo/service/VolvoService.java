@@ -3,7 +3,6 @@ package com.geray.volvoapi.demo.service;
 import com.geray.volvoapi.demo.model.Volvo;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -26,6 +25,7 @@ public class VolvoService {
             new Volvo("xc90","both","suv",48350, (float) 4.9),
             new Volvo("xc90Hybrid","gasoline","suv",67000, (float) 4.9)
     );
+
         public List<Volvo> getAllCars(){
             return carList;
         }
@@ -42,7 +42,7 @@ public class VolvoService {
                 if(carList.get(i).getBodyType().equals(bodyType)){
                     searchedTypes.add(carList.get(i));
                 }
-        }
+            }
             return searchedTypes;
         }
 

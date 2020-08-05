@@ -28,6 +28,7 @@ public class VolvoController {
     }
 
 
+    //problem
     @GetMapping(value = "/volvo/{bodyType}")
     public List<Volvo> getVolvoByBodyType(@PathVariable String bodyType){
         return volvoService.getbyBodyType(bodyType);
