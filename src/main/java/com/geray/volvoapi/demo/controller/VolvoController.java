@@ -3,13 +3,9 @@ package com.geray.volvoapi.demo.controller;
 import com.geray.volvoapi.demo.model.Volvo;
 import com.geray.volvoapi.demo.service.VolvoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
 
 @RestController
 public class VolvoController {
@@ -27,13 +23,14 @@ public class VolvoController {
         return volvoService.getbySerie(serie);
     }
 
-
-    //problem
-    @GetMapping(value = "/volvo/{bodyType}")
-    public List<Volvo> getVolvoByBodyType(@PathVariable String bodyType){
-        return volvoService.getbyBodyType(bodyType);
+    @GetMapping("/volvo/body/{bodyType}")
+    public List<Volvo> getByBodyType(@PathVariable  String bodyType){
+        return volvoService.getBybodyType(bodyType);
     }
 
-
+    @DeleteMapping(value = "/volvo/{serie}")
+    public void deleteCar(@PathVariable String serie){
+        volvoService.deleteCar(serie);
+    }
 
 }

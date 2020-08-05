@@ -10,7 +10,6 @@ public class Volvo {
     private int value;
     private float rate;
 
-
     public Volvo(String serie, String fuelType, String bodyType, int value, float rate) {
         this.serie = serie;
         this.fuelType = fuelType;
@@ -18,6 +17,15 @@ public class Volvo {
         this.value = value;
         this.rate = rate;
     }
+    public Volvo(String serie, String fuelType, String bodyType, int value) {
+        this.serie = serie;
+        this.fuelType = fuelType;
+        this.bodyType = bodyType;
+        this.value = value;
+    }
+
+
+
 
     public Volvo() {
     }
