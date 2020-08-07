@@ -50,4 +50,12 @@ public class VolvoService {
     public void deleteCar(String serie) {
         carList.removeIf(t -> t.getSerie().equals(serie));
     }
+
+    public void updateCar(Volvo volvo,String serie) {
+        carList.set(carList.indexOf(getbySerie(serie)),volvo);
+    }
+
+    public void postCar(Volvo volvo) {
+        carList.add(volvo);
+    }
 }

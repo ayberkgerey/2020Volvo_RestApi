@@ -28,6 +28,16 @@ public class VolvoController {
         return volvoService.getBybodyType(bodyType);
     }
 
+    @PutMapping(value = "/topics/{serie}")
+    public void updateCar(@RequestBody Volvo volvo , @PathVariable String serie){
+        volvoService.updateCar(volvo,serie);
+    }
+
+    @PostMapping(value = "/topics/{serie}")
+    public void postCar(Volvo volvo){
+        volvoService.postCar(volvo);
+    }
+
     @DeleteMapping(value = "/volvo/{serie}")
     public void deleteCar(@PathVariable String serie){
         volvoService.deleteCar(serie);
